@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+    <link rel='stylesheet' type='text/css' href="{% static 'Css/style.css'%}">
+    </head>
+    <body>
+    <h1> staff </h1>
+    <br>
+    {% if  staff %}
+        {% for items in staff %}
+            {% if  items.Appointment == "SO2 H1"%}
+                
+                
+                <img src='{{items.staff_image.url}}' height="300">
+                <h3>{{ items.Name }}</h3>
+                <h3>{{ items.Appointment }}</h3>
+            {% endif %}
+    
+    {% endfor %}
+    {% else %}
+
+    {% endif %}
+    
+    </body>
+</html>

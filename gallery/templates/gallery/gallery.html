@@ -1,0 +1,50 @@
+ {% load static %}
+<html>
+    <head>
+    <link rel='stylesheet' type='text/css' href="{% static 'Css/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/css/lightgallery.min.css" 
+    integrity="sha512-Szyqrwc8kFyWMllOpTgYCMaNNm/Kl8Fz0jJoksPZAWUqhE60VRHiLLJVcIQKi+bOMffjvrPCxtwfL+/3NPh/ag=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+    <h1> Gallery </h1>
+    {% if gallery_obj %}
+        {% for objects in gallery_obj %}
+        <div class="gallery">
+        <a href="{{objects.image.url}}">
+         <img src="{{objects.image.url}}" height="300">
+            <p>{{objects.description}}</p>
+        </a>          
+        </div>
+        {% endfor %}
+
+    {% else %}
+        <h1>You are yet to upload an image</h1>
+    {% endif %} 
+
+    {% comment %} {{gallery_obj}} {% endcomment %}
+    <! pagination code  !>
+
+    {% if gallery_obj.has_previous %}
+        <a href="?page=1">&laquo 1</a>
+        <a href="?page={{ gallery_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    Page {{gallery_obj.number}} of {{gallery_obj.paginator.num_pages}}
+
+    {% if gallery_obj.has_next %}
+        <a href="?page={{gallery_obj.next_page_number}}">Next</a>
+        <a href="?page={{gallery_obj.paginator.num_pages}}">Last &raquo</a>
+    {% endif %}
+
+
+    <script type="text/javascript">
+    lightGallery(document.queryselector('gallery'));
+    </script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/lightgallery.min.js" 
+ integrity="sha512-FDbnUqS6P7md6VfBoH57otIQB3rwZKvvs/kQ080nmpK876/q4rycGB0KZ/yzlNIDuNc+ybpu0HV3ePdUYfT5cA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+     </body>
+</html>

@@ -1,0 +1,15 @@
+{% if  wings%}
+ <ol>
+    {% for objects in wings %}
+   
+    <li>
+     <a href="{{objects.get_absolute_url }}">{{objects.name}}</a>
+    </li>
+   {% endfor %}
+    </ol>
+   
+    
+ 
+{% else %}
+ <h1>You are yet to upload a wing.</h1>
+{% endif %}
