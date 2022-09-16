@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}    
+
 {% if  wings%}
  <ol>
     {% for objects in wings %}
@@ -13,3 +18,6 @@
 {% else %}
  <h1>You are yet to upload a wing.</h1>
 {% endif %}
+
+    
+{% endblock %}

@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third party apps
+    'cloudinary_storage',
+    'cloudinary',
 
+     # installed app
     'staffpage',
     'gallery',
     'wing',
@@ -130,6 +134,19 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = 'media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# CLOUDINARY STORAGE
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dfh3g0vol',
+    'API_KEY': '472942484216124',
+    'API_SECRET': 'isBZNxWV2mTnsBUX8KIbfJne7Ek'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

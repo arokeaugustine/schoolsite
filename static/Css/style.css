@@ -1,4 +1,142 @@
 body{
-    background-color: blueviolet;
-    color: azure;
+    padding: 0;
+    margin: 0;
+    background: #F5F5F5;
+    font-family: 'Poppins';
 }
+.beforenav{
+    font-family: poppins;
+    background: #3E3E98;
+    color: white;
+    /* text-align: center; */
+    /* line-height: 18px; */
+    /* width: 100%; */
+    
+}
+.logo{
+    width: 64px;
+    height: 72px;
+}
+.navbar{
+    background: #FBFBFD;
+}
+
+.navbar-toggler, #speech-header{       
+  
+    color:#3E3E98;
+    
+}
+.logosecondtext{
+    font-style: normal;
+    /* font-weight: 400;
+    font-size: 16px; */
+    line-height: 24px;
+    color: #535357;
+}
+.logofirsttext{
+    /* font-weight: 00; */
+    font-size: 20px; 
+    color: #E92E37;
+
+    font-family: poppins;
+}
+.navbar-nav .nav-item .nav-link{
+    
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #535357;
+
+}
+.navbar-nav .nav-item .nav-link:hover{
+    color: #E92E37;
+    text-decoration: underline;
+    /* font-weight: bold; */
+    font-family: 'Poppins';
+}
+
+#signin{
+    background: #E92E37;
+    width: 150px;
+}
+.speechsection{
+    /* border: 2px solid green; */
+    margin: 0px 100px;
+}
+#mission-icon{
+    width: 48px;
+    height: 48px;
+}
+
+.speech-div{
+    width: 500px;
+}
+#mycard{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+
+}
+footer{
+    background: #3E3E98;
+}
+footer p{
+    font-size: 16px;
+}
+
+/* wing page css */
+#page-heading{
+    color: #E92E37;
+}
+.searchbtn{
+    background: #E92E37; 
+    color: white;
+}
+
+/* wing details page */
+.wingDetailCard{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+}
+#Resource{
+    background: #3E3E98;
+    
+}
+.materialDiv{
+     background: #FFFFFF;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+     border-radius: 5px;
+}
+
+/* gallery page */
+.item{
+    transition: .5s ease-in-out;
+}
+.item:hover{
+    filter: brightness(80%);
+}
+
+@media screen and (max-width: 992px) {
+    .logofirsttext{       
+        font-weight: 400;
+        font-size: 14px;
+        /* line-height: 18px; */
+    }
+    .logosecondtext{
+        font-weight: 300px;
+        font-size: 12px;
+        /* line-height: 16px; */
+    }
+    .carousel img{
+        height: 300px;
+        background-size: cover;
+    }
+    .speechsection{
+        margin: 0px 30px;
+    }
+    .speech-div{
+        width: auto;
+    }
+  }

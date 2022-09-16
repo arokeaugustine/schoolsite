@@ -1,0 +1,42 @@
+<form method=POST action="{% url 'search_courses' %}">
+    {% csrf_token %}
+    <input  type="text"  name="search">
+    <input  type="submit"  value="search">
+    </form>
+    
+    
+    {% if courses %}
+        {% for objects in  courses%}
+         <li>
+            
+                <a href="{{objects.course_material.url}}">Download </a>
+                {% if objects.title %}
+                <p> {{objects.title}} </p> 
+                {% endif %}
+                <p> {{objects.upload_date}} </p> 
+            {% if objects.uploaded_by %}
+            <p> {{objects.uploaded_by}} </p> 
+            {% endif %}
+                
+            </li>  
+        
+        {% endfor %}
+    {% else %}
+    
+    <h1>Invalid search result</h1>
+    {% endif %}
+    
+    <! pagination code  !>
+    
+        {% if courses.has_previous %}
+            <a href="?page=1">&laquo 1</a>
+            <a href="?page={{ courses.previous_page_number }}">Previous</a>
+        {% endif %}
+    
+        Page {{courses.number}} of {{courses.paginator.num_pages}}
+    
+        {% if courses.has_next %}
+            <a href="?page={{courses.next_page_number}}">Next</a>
+            <a href="?page={{courses.paginator.num_pages}}">Last &raquo</a>
+        {% endif %}
+     
