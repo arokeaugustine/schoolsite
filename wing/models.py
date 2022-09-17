@@ -1,9 +1,11 @@
 from distutils.command.upload import upload
+from pyexpat import model
 from django.db import models
 from django.urls import reverse
 
 class Wing(models.Model):
     name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='images')
     description = models.CharField(max_length=1000, blank=True)
     slug = models.SlugField(max_length=200, unique=True)
 

@@ -21,13 +21,13 @@ def wing_detail(request, id, slug):
 #  search view for courses
 def search_courses(request):
     # checking the type of request
-    if request.method == 'POST':
+    if request.method=='GET':
         # passing the seach input to our variable
-        search = request.POST['search']
+        search = request.GET['search']
         # query database by search input
         courses = Course.objects.filter(title__contains=search)
 
-        paginator =Paginator(courses, 25)
+        paginator =Paginator(courses, 5)
 
         page_number = request.GET.get('page')
         courses_obj = paginator.get_page(page_number)

@@ -3,21 +3,58 @@
 
 {% block content %}    
 
-{% if  wings%}
- <ol>
-    {% for objects in wings %}
-   
-    <li>
-     <a href="{{objects.get_absolute_url }}">{{objects.name}}</a>
-    </li>
-   {% endfor %}
-    </ol>
-   
+
+
+
+<section class="speechsection my-5">
+  
+    <!-- Code for the wings  -->
     
- 
-{% else %}
- <h1>You are yet to upload a wing.</h1>
-{% endif %}
+    <div>
+        <h5 id="page-heading">
+            Wing
+        </h5>
+        <form action="{% url 'search_courses' %}">
+            {% csrf_token %}
+        <div class="input-group w-75 mb-3">          
+            <input type="text" class="form-control" placeholder="Search for Course materials" name="search">
+            <div class="input-group-append">
+              <button class="btn searchbtn" type="submit">
+                <i class="fa fa-search"></i>
+              </button>         
+            
+            </div>
+          </div>
+        </form>
+    <!-- display all the wings -->
+        <div class="row justify-content-between ">
+            {% if  wings%}
+            {% for objects in wings %}
+            <div class="col-md-4 mt-2"> 
+                <div class="card" >
+                    <img class="card-img-top" src="{{objects.image.url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="{{objects.get_absolute_url }}" class="text-dark">
+                            <h5 class="card-title">{{objects.name}}</h5>
+                        </a>
+                       
+                    </div>
+                  </div>
+            </div>
+            {% endfor %}
+            
+            
+        {% else %}
+        <h1 class="h3">You are yet to upload a wing.</h1>
+        {% endif %}
+
+
+    
+        </div>
+    </div>
+    </section>
+    
+
 
     
 {% endblock %}

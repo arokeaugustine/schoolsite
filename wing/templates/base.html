@@ -44,19 +44,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mr-lg-5">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html"> Home </a>
+            <a class="nav-link" href="{% url 'home' %}"> Home </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="about.html"> About </a>
+            <a class="nav-link" href="{% url 'about' %}"> About </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="wing.html"> Academics</a>
+            <a class="nav-link" href="{% url 'winglist' %}"> Academics</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="gallery.html"> Gallery </a>
+            <a class="nav-link" href="{% url 'gallery' %}"> Gallery </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="contact.html"> Contact  </a>
+            <a class="nav-link" href="{% url 'contact' %}"> Contact  </a>
           </li>
         </ul>
         <a class="nav-link ml-lg-5 ml-sm-0 p-2 mr-3 text-white w-auto" href="#" id="signin"><i class="fa fa-key text-white" aria-hidden="true"></i> Staff Login  </a>
@@ -67,13 +67,13 @@
 
 
   <!-- main body section that will be used as default margin for other pages -->
-<section class="speechsection my-5">
+
   
 {% block content %}    
 
 
 {% endblock %}
-</section>
+
 
 
 

@@ -1,35 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
 
 {% block content %}    
 
-
-
-<h1>
-        {{wing}}
-    </h1> 
-    <p>{{wing.description}}</p>
-
-    {% if  courses%}
-        {% for objects in courses %}
-        <li>
-        
-            <a href="{{objects.course_material.url}}">Download </a>
-            {% if objects.title %}
-            <p> {{objects.title}} </p> 
-            {% endif %}
-            <p> {{objects.upload_date}} </p> 
-        {% if objects.uploaded_by %}
-        <p> {{objects.uploaded_by}} </p> 
-        {% endif %}
-            
-        </li>  
-    {% endfor %}
-    
-    {% else %}
-
-     <p>Sorry Materials are yet to be uploaded here </p> 
-    {% endif %}
+<section class="speechsection my-5">
   
-     <! pagination code  !>
+    <!-- Code for the wings   details-->
+    
+    <div class="">
+      <div class="my-3">
+        <h5 id="page-heading">
+            {{wing}}
+      </h5>
+      <h6 class="p-0 m-0 h6 text-secondary">Wing/{{wing}}</h6>
+      </div>
+       
+    <!-- display all wing details -->
+    
+        <div class="wingDetailCard px-3 py-4">
+            <p>
+                {{wing.description}}
+            </p>
+        </div>
+    
+          <!-- materials -->
+          {% if  courses%}
+          <div class="materialDiv mt-4 mb-3">
+            <p class="py-2 px-2 text-white" id="Resource">
+              Resources
+            </p>
+            {% for objects in courses %}
+            <div class="d-flex justify-content-between align-items-center px-4">
+              <div class="d-flex">
+                <img src="./images/pdf icon.jpg" alt="" style="height: 50px;">
+                <div class="ml-3">
+                  {% if objects.title %}
+                  <p class="my-0">{{objects.title}}</p>
+                  {% endif %}
+                  {% if objects.uploaded_by %}
+                  <p class="text-muted my-0">{{objects.uploaded_by}}</p>
+                  {% endif %}
+                  <p class="text-primary my-0 ">{{objects.upload_date}}</p>
+      
+                </div>
+      
+              </div>
+              <div class="text-center my-0 mx">
+                <i class="fa fa-download my-0 d-block" aria-hidden="true"></i>
+                <!-- <p class="text-primary ">Download</p> -->
+                <a href="{{objects.course_material.url}}" class="my-0 py-0 d-block">Download</a>
+              </div>
+            </div>
+            <hr>
+            {% endfor %}
+           
+          </div>
+          {% else %}
+
+        <h3 class="h3 my-5">Sorry Materials are yet to be uploaded here </h3> 
+        {% endif %}
+    </div>
+
+     <!-- pagination code   -->
 
     {% if courses.has_previous %}
         <a href="?page=1">&laquo 1</a>
@@ -42,6 +74,10 @@
         <a href="?page={{courses.next_page_number}}">Next</a>
         <a href="?page={{courses.paginator.num_pages}}">Last &raquo</a>
     {% endif %}
+
+    </section>
+
+  
  
 
     
