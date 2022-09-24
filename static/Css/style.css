@@ -150,6 +150,9 @@ iframe{
     color: white;
 }
 @media screen and (max-width: 992px) {
+    .beforenav{
+        font-weight: 12px;
+    }
     .logofirsttext{       
         font-weight: 400;
         font-size: 14px;
