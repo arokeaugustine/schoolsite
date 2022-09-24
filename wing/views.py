@@ -36,6 +36,6 @@ def search_courses(request):
 
         page_number = request.GET.get('page')
         courses_obj = paginator.get_page(page_number)
-        return render(request, 'wing/search_courses.html', {'courses':courses_obj})
+        return render(request, 'search_courses.html', {'courses':courses_obj, 'search': search})
     else:
         return render(request, 'search_courses.html')

@@ -1,42 +1,87 @@
-<form action="{% url 'search_courses' %}">
-    {% csrf_token %}
-    <input  type="text"  name="search">
-    <input  type="submit"  value="s">
-    </form>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Search Courses{% endblock %}
+{% block content %}   
+
+
+  <!-- main body section that will be used as default margin for other pages -->
+  <section class="speechsection my-5">
+  
+    <!-- Code for the wings  -->
     
-    
-    {% if courses %}
-        {% for objects in  courses%}
-         <li>
-            
-                <a href="{{objects.course_material.url}}">Download </a>
-                {% if objects.title %}
-                <p> {{objects.title}} </p> 
-                {% endif %}
-                <p> {{objects.upload_date}} </p> 
-            {% if objects.uploaded_by %}
-            <p> {{objects.uploaded_by}} </p> 
-            {% endif %}
-                
-            </li>  
+    <div>
+        <h5 id="page-heading">
+            Search Page
+        </h5>
         
-        {% endfor %}
-    {% else %}
+
+        <form action="{% url 'search_courses' %}">
+            {% csrf_token %}
+        <div class="input-group w-75 mb-3">          
+            <input type="text" class="form-control" placeholder="Search for Course materials" name="search">
+            <div class="input-group-append">
+              <button class="btn searchbtn" type="submit">
+                <i class="fa fa-search"></i>
+              </button>         
+            
+            </div>
+          </div>
+        </form>
     
-    <h1>Invalid search result</h1>
+               <!-- materials -->
+          {% if  courses%}
+          <div class="materialDiv mt-4 mb-3">
+            <p class="py-2 px-2 text-white" id="Resource">
+              Your search feed for <strong> {{search}}</strong>
+            </p>
+            {% for objects in courses %}
+            <div class="d-flex justify-content-between align-items-center px-4">
+              <div class="d-flex">
+                <img src="./images/pdf icon.jpg" alt="" style="height: 50px;">
+                <div class="ml-3">
+                  {% if objects.title %}
+                  <p class="my-0">{{objects.title}}</p>
+                  {% endif %}
+                  {% if objects.uploaded_by %}
+                  <p class="text-muted my-0">{{objects.uploaded_by}}</p>
+                  {% endif %}
+                  <p class="text-primary my-0 ">{{objects.upload_date}}</p>
+      
+                </div>
+      
+              </div>
+              <div class="text-center my-0 mx">
+                <i class="fa fa-download my-0 d-block" aria-hidden="true"></i>
+                <!-- <p class="text-primary ">Download</p> -->
+                <a href="{{objects.course_material.url}}" class="my-0 py-0 d-block">Download</a>
+              </div>
+            </div>
+            <hr>
+            {% endfor %}
+           
+          </div>
+          {% else %}
+
+        <h3 class="h4 my-5">invalid query </h3> 
+        {% endif %}
+    </div>
+
+
+      <!-- pagination code   -->
+
+      {% if courses.has_previous %}
+      <a href="?page=1">&laquo 1</a>
+      <a href="?page={{ courses.previous_page_number }}">Previous</a>
     {% endif %}
-    
-    <! pagination code  !>
-    
-        {% if courses.has_previous %}
-            <a href="?page=1">&laquo 1</a>
-            <a href="?page={{ courses.previous_page_number }}">Previous</a>
-        {% endif %}
-    
-        Page {{courses.number}} of {{courses.paginator.num_pages}}
-    
-        {% if courses.has_next %}
-            <a href="?page={{courses.next_page_number}}">Next</a>
-            <a href="?page={{courses.paginator.num_pages}}">Last &raquo</a>
-        {% endif %}
-     
+
+    Page {{courses.number}} of {{courses.paginator.num_pages}}
+
+    {% if courses.has_next %}
+        <a href="?page={{courses.next_page_number}}">Next</a>
+        <a href="?page={{courses.paginator.num_pages}}">Last &raquo</a>
+    {% endif %}
+
+    </section>
+
+    {% endblock %}
+
