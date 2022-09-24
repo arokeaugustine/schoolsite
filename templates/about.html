@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}    
+
+ <!-- main body section that will be used as default margin for other pages -->
+ <section class="speechsection my-5">
+
+    <!-- code for about page -->
+
+    <div>
+        <h5 class="h-5" id="page-heading">About Us</h5>
+    </div>
+    <div id="accordion" >
+      <!-- card with detail of our Corp -->
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link w-100 text-left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="aboutbtn">
+                Our Corp
+              </button>
+            </h5>
+          </div>
+      
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <div class="text-center pb-3">
+                    <img src="https://res.cloudinary.com/adeizaa/image/upload/v1663361797/Nasmp_frontend/User_c9kaq1.jpg" alt="" style="height:150px; ">
+                    <p class="my-0 py-0">Maj Gen A AAAA</p>
+                    <p class="small py-0 my-0">Provost Marshall Nigerian Army</p>
+                </div>
+                <p class="text-justify">
+                    The history of the Nigerian Army Corps of Military Police (NACMP) dates back to the days of the West African Frontier
+                     Force (WAFF). The Corps at its inception were a small force commanded by British officers.
+                     The disposition of WAFF covered Nigeria, Ghana, Sierra Leone, and the Gambia. 
+                     The Force in Nigeria had No 1 and 3 Sections in Lagos and No 2 and 4 Sections were based in Kaduna. 
+                     In peacetime, NACMP undertakes the tasks of crime prevention,
+                      crime detection, apprehension of offenders, assistance to service personnel, and maintenance of discipline. 
+                      Others are routine police duties like foot patrols, traffic control, route signing, ceremonial duties including VIP escort and protection, 
+                      criminal investigation, as well as co-operation with civil police in all aspects of police duties.
+                      In wartime, NACMP carries out all the tasks enumerated during peace in addition to stragglers center control, 
+                      refugee control, the establishment of prisoners of war camp, rear area protection, security of main supply route,
+                       and support of NA Engineers. NACMP is headed by the Provost Marshal Army (PM 'A') 
+                </p>
+            </div>
+          </div>
+        </div>
+        <!-- Card with details on Our School -->
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed w-100 text-left" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="aboutbtn">
+                Our School
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <div class="text-center pb-3">
+                    <img src="https://res.cloudinary.com/adeizaa/image/upload/v1663361797/Nasmp_frontend/User_c9kaq1.jpg" alt="" style="height:150px; ">
+                    <p class="my-0 py-0">Brig Gen M O EREBULU</p>
+                    <p class="small py-0 my-0">Commandant Nigerian Army School of Military Police</p>
+                </div>
+            <p class="text-justify">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt 
+                 laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin 
+                 coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+                 cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore
+                   sustainable VHS.
+            
+            </p>
+        </div>
+          </div>
+        </div>
+        <!-- Card with details on Our Principal Officers -->
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed w-100 text-left" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo" id="aboutbtn">
+                Our Principal Officers
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                <div class="text-center pb-3">
+                    <img src="https://res.cloudinary.com/adeizaa/image/upload/v1663361797/Nasmp_frontend/User_c9kaq1.jpg" alt="" style="height:150px; ">
+                    <p class="my-0 py-0">Brig Gen M O EREBULU</p>
+                    <p class="small py-0 my-0">Commandant Nigerian Army School of Military Police</p>
+                </div>
+
+                <div class="container-fluid">
+                  <div class="row mt-4">
+                      <div class="item col-sm-6 col-md-4 mb-5 text-center">
+                        
+                              <img src="https://res.cloudinary.com/adeizaa/image/upload/v1663361797/Nasmp_frontend/User_c9kaq1.jpg" alt="" style="height:150px; ">
+                              <p class="my-0 py-0">Col  EU  ksdkll'fk</p>
+                             <p class="small py-0 my-0">Chief Instructor Training Branch</p>
+                         
+                      </div>
+                      <div class="item col-sm-6 col-md-4 mb-5 text-center">
+                         
+                              <img src="https://res.cloudinary.com/adeizaa/image/upload/v1663361797/Nasmp_frontend/User_c9kaq1.jpg" alt="" style="height:150px; ">
+                              <p class="my-0 py-0">Col IO  kfsdlj</p>
+                              <p class="small py-0 my-0">Chief Instructor General Duties</p>
+                      </div>
+                      <div class="item col-sm-6 col-md-4 mb-5 text-center">
+                          
+                              <img src="https://res.cloudinary.com/adeizaa/image/upload/v1663361797/Nasmp_frontend/User_c9kaq1.jpg" alt="" style="height:150px; ">
+                              <p class="my-0 py-0">Lt Col  E Oklds</p>
+                              <p class="small py-0 my-0">SO 1 G1</p>
+                      </div>
+                      <div class="item col-sm-6 col-md-4 mb-3 text-center">
+                          
+                              <img src="https://res.cloudinary.com/adeizaa/image/upload/v1663361797/Nasmp_frontend/User_c9kaq1.jpg" alt="" style="height:150px; ">
+                              <p class="my-0 py-0">Maj Ui Pou</p>
+                              <p class="small py-0 my-0">SO 1 G2</p>
+                      </div>
+                      <div class="item col-sm-6 col-md-4 mb-3  text-center">
+                          
+                              <img src="https://res.cloudinary.com/adeizaa/image/upload/v1663361797/Nasmp_frontend/User_c9kaq1.jpg" alt="" style="height:150px; ">
+                              <p class="my-0 py-0">Maj Fj Ykjlsdkjd</p>
+                              <p class="small py-0 my-0">SO 1 G3</p>
+                      </div>
+                      <div class="item col-sm-6 col-md-4 mb-3 text-center">
+                         
+                              <img src="https://res.cloudinary.com/adeizaa/image/upload/v1663361797/Nasmp_frontend/User_c9kaq1.jpg" alt="" style="height:150px; ">
+                              <p class="my-0 py-0">Capt Pl Ukjldslf</p>
+                              <p class="small py-0 my-0">SO 1 G4</p>
+                      </div>
+                  </div>
+              </div>
+            
+        </div>
+          </div>
+        </div>
+      </div>
+
+
+</section>
+
+
+
+ 
+{% endblock %}

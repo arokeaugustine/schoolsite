@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}    
+
+<section class="speechsection my-5">
+    <form method="POST">
+        {% csrf_token %}
+            
+
+        {{ form.as_p }}
+              
+           
+        <div class="form-group">
+            <button  type="submit">Login</button>
+        </div>
+    </form>
+</section>
+
+{% endblock %}

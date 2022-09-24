@@ -7,4 +7,4 @@ def gallery(request):
     paginator = Paginator(gallery, 7)
     page_number = request.GET.get('page')
     gallery_obj = paginator.get_page(page_number)
-    return render(request, 'gallery/gallery.html', {'gallery_obj': gallery_obj})
+    return render(request, 'gallery.html', {'gallery_obj': gallery_obj})

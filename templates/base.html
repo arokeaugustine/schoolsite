@@ -49,9 +49,11 @@
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'about' %}"> About </a>
           </li>
+          {% if user.is_authenticated %}
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'winglist' %}"> Academics</a>
           </li>
+          {% endif %}
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'gallery' %}"> Gallery </a>
           </li>
@@ -59,8 +61,11 @@
             <a class="nav-link" href="{% url 'contact' %}"> Contact  </a>
           </li>
         </ul>
-        <a class="nav-link ml-lg-5 ml-sm-0 p-2 mr-3 text-white w-auto" href="#" id="signin"><i class="fa fa-key text-white" aria-hidden="true"></i> Staff Login  </a>
-        
+        {% if user.is_authenticated %}
+        <a class="nav-link ml-lg-5 ml-sm-0 p-2 mr-3 text-white w-auto" href="{% url 'logout' %}" id="signin"><i class="fa fa-key text-white" aria-hidden="true"></i> Staff Logout  </a>
+        {% else %}
+        <a class="nav-link ml-lg-5 ml-sm-0 p-2 mr-3 text-white w-auto" href="{% url 'login' %}" id="signin"><i class="fa fa-key text-white" aria-hidden="true"></i> Staff Login  </a>
+        {% endif %}
       </div>
     </nav>
 
@@ -100,13 +105,13 @@
     <p class="pt-lg-0 pt-3 lead">Quick Links</p>
     <div class="d-block">
       <ul class="m-0 p-0">
-       <a href="index.html" class="d-block  text-white w-auto"><span>&gt;</span> Home</a>
+       <a href="{% url 'home' %}" class="d-block  text-white w-auto"><span>&gt;</span> Home</a>
      
-       <a href="about.html" class="d-block text-white "><span>&gt;</span>  About</a>
+       <a href="{% url 'about' %}" class="d-block text-white "><span>&gt;</span>  About</a>
      
-      <a href="wing.html" class="d-block text-white "><span>&gt;</span>Academics</a>
+      <a href="{% url 'winglist' %}" class="d-block text-white "><span>&gt;</span>Academics</a>
      
-       <a href="gallery.html" class="d-block text-white "><span>&gt;</span> Gallery</a>
+       <a href="{% url 'gallery' %}" class="d-block text-white "><span>&gt;</span> Gallery</a>
     
       <a href="contact.html" class="d-block text-white "><span>&gt;</span> Contact</a>
       </ul>

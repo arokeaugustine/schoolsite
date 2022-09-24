@@ -26,6 +26,10 @@ SECRET_KEY = 'django-insecure-yp-$umf*k_f^ua@%wf^ryw47&75)q29qx2e!tx3tvhe77xdqk=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+LOGIN_URL = '/login/'  
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
 ALLOWED_HOSTS = []
 
 
@@ -60,10 +64,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'nasmp.urls'
 
+# Templates Directory
+TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -152,3 +159,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+DEFAULT_FROM_EMAIL = "arokeaugustine@gmail.com"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

@@ -1,12 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Wing, Course
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def winglist(request):
     wings = Wing.objects.all()
-    return render(request, 'wing/wing_list.html', {'wings': wings})
+    return render(request, 'wing_list.html', {'wings': wings})
 
 
+@login_required
 def wing_detail(request, id, slug):
     # matching_courses = Course.objects.filter(wing__slug)
     wing = get_object_or_404(Wing, id=id, slug=slug)
@@ -14,11 +17,13 @@ def wing_detail(request, id, slug):
     paginator = Paginator(matching_courses, 2)
     page_number = request.GET.get('page')
     courses_obj = paginator.get_page(page_number)
-    return render(request, 'wing/wing_detail.html', {'courses': courses_obj, 'wing':wing,})
+    return render(request, 'wing_detail.html', {'courses': courses_obj, 'wing':wing,})
 
 
 # search needs to be refactored so that it will work with get request and not post
 #  search view for courses
+
+@login_required
 def search_courses(request):
     # checking the type of request
     if request.method=='GET':
@@ -33,4 +38,4 @@ def search_courses(request):
         courses_obj = paginator.get_page(page_number)
         return render(request, 'wing/search_courses.html', {'courses':courses_obj})
     else:
-        return render(request, 'wing/search_courses.html')
+        return render(request, 'search_courses.html')
