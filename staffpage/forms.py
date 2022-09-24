@@ -3,10 +3,23 @@ from django import forms
 
 
 class UserForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["username"].widget.attrs.update({
+            'type':"text",
+            'class':"form-control w-100", 
+            'id':"inputText",
+           
+        })
+        self.fields["password"].widget.attrs.update({
+           'type':"password",
+           'class':"form-control",
+           'id':"inputPassword",
+        })
+
     class Meta:
         model = User 
         fields = ['username', 'password']
-
 
 
 class ContactForm(forms.Form):

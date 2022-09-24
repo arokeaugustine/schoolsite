@@ -63,11 +63,7 @@ def signin(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(
-            request,
-            username=username,
-            password=password
-        )
+        user = authenticate( request, username=username, password=password)
         if user is None:
             return HttpResponse("Invalid credentials.")
         login(request, user)
@@ -81,4 +77,3 @@ def signout(request):
     logout(request)
     return redirect('home')
 
-    
