@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Search Courses{% endblock %}
+{% block content %}   
+
+
+  <!-- main body section that will be used as default margin for other pages -->
+    <section class="speechsection my-5 py-5">
+  
+    <!-- Code for the wings  -->
+    
+    <div class="mb-5">
+        <h5 class="h2 text-secondary"  id="page-heading">
+            Logged Out
+        </h5>
+        <hr>
+
+        <p class="lead">
+            You have successfully logged out. Do you want to <a href="{% url 'login' %}">Login</a>?
+        </p>
+    </div>
+
+
+    
+    </section>
+
+{% endblock %}
+
