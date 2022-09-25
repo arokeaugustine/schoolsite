@@ -10,32 +10,75 @@
     <!-- code for about page -->
 
     <div>
-        <h5 class="h-5" id="page-heading">Photo Gallery</h5>
+        <h5 class="h-5 mx-2" id="page-heading">Photo Gallery</h5>
 
 
         <div class="container-fluid">
             
-      {% if gallery_obj %}
-            <div class="row mt-4">
+        {% if gallery_obj %}
+            <div class="row mt-4" id="lightgallery">
                 {% for objects in gallery_obj %}
-                <div class="item col-sm-6 col-md-4 mb-5">
-                    <a href="{{objects.image.url}}" class="fancybox" data-fancybox="gallery1">
+                    <a href="{{objects.image.url}}" class="item col-sm-6 col-md-4 mb-5">
                         <img src="{{objects.image.url}}" alt="" width="100%" height="100%" >
                     </a>
-                </div>
-              
+
                 {% endfor %}
 
             </div>
             {% else %}
             <h3 class="h3 my-5">Sorry, we are yet to upload images to our gallery</h3>
         {% endif %} 
+          
         </div>
 
 
 
          <!--  pagination code   -->
+{% if gallery_obj.has_other_pages %}
+<nav aria-label="...">
+    <ul class="pagination">
+        {% if gallery_obj.has_previous %}
+        <li class="page-item">
+            <a href="?page={{gallery_obj.previous_page_number}}" class="page-link">&laquo;</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a href="#" class="page-link">&laquo;</a>
+        </li>
+        {% endif %}
+        {% for i in gallery_obj.paginator.page_range %}
+            {% if gallery_obj.number == i %}
+            <li class="page-item active">
+                <a href="#" class="page-link">{{i}}</a>
+            </li>
+            {% else %}
+            <li class="page-item">
+                <a href="?page={{i}}" class="page-link">{{i}}</a>
+            </li>
+            {% endif %}
+        {% endfor %}
+        {% if gallery_obj.has_next %}
+        <li class="page-item">
+            <a href="?page={{ gallery_obj.next_page_number }}" class="page-link">&raquo;</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a href="#" class="page-link">&raquo;</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
 
+{% endif %}
+
+
+
+
+
+
+
+         
+<!-- {% if gallery_obj.has_other_pages %}
     <nav aria-label="...">
     <ul class="pagination">
     {% if gallery_obj.has_previous %}
@@ -45,13 +88,13 @@
     <li class="page-item">
         <a href="?page={{ gallery_obj.previous_page_number }}" class="page-link">Previous</a>
     </li>
-    {% endif %}
+    {% endif %} -->
     <!-- <li class="page-item disabled">
         <a href="#" class="page-link ">
             Page {{gallery_obj.number}} of {{gallery_obj.paginator.num_pages}}
         </a>
     </li> -->
-    {% for i in nums %}
+    <!-- {% for i in nums %}
     <li class="page-item">
         <a href="?page= {{forloop.counter}}" class="page-link">{{forloop.counter}}</a>
     </li>
@@ -68,6 +111,7 @@
 
 </ul>
 </nav>
+{% endif %} -->
 </section>
 
 
