@@ -28,15 +28,15 @@
             {% if  wings%}
             {% for objects in wings %}
             <div class="col-md-4 mt-2"> 
-                <div class="card" >
-                    <img class="card-img-top" src="{{objects.image.url}}" alt="Card image cap">
+                <a class="card" href="{{objects.get_absolute_url }}">
+                    <img  src="{{objects.image.url}}" alt="Card image cap" height="300px">
                     <div class="card-body">
-                        <a href="{{objects.get_absolute_url }}" class="text-dark">
-                            <h5 class="card-title">{{objects.name}}</h5>
-                        </a>
+                        <!-- <a href="{{objects.get_absolute_url }}" class="text-dark"> -->
+                            <h5 class="card-title text-dark">{{objects.name}}</h5>
+                        <!-- </a> -->
                        
                     </div>
-                  </div>
+                </a>
             </div>
             {% endfor %}
             
