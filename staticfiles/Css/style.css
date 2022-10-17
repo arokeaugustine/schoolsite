@@ -8,14 +8,16 @@ body{
     font-family: poppins;
     background: #3E3E98;
     color: white;
+    font-weight:400;
+    font-size: 12px;
     /* text-align: center; */
     /* line-height: 18px; */
     /* width: 100%; */
     
 }
 .logo{
-    width: 64px;
-    height: 72px;
+    width: 100%;
+    height: auto;
 }
 .navbar{
     background: #FBFBFD;
@@ -28,8 +30,8 @@ body{
 }
 .logosecondtext{
     font-style: normal;
-    /* font-weight: 400;
-    font-size: 16px; */
+    font-weight: 300;
+    font-size: 16px;
     line-height: 24px;
     color: #535357;
 }
@@ -37,7 +39,7 @@ body{
     /* font-weight: 00; */
     font-size: 20px; 
     color: #E92E37;
-    font-weight: 500;
+    font-weight: 300;
     font-family: poppins;
 }
 .navbar-nav .nav-item .nav-link{
@@ -83,6 +85,7 @@ footer{
 }
 footer p{
     font-size: 16px;
+    font-weight: 300;
 }
 
 /* wing page css */
@@ -145,13 +148,29 @@ iframe{
 #contactinfodiv a{
     color: #3E3E98;
 }
-#contactformbtn{
-    background: #3E3E98;
-    color: white;
+#footerlinks, .beforenav{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+}
+#credits{
+    background: #34347F;
+   
+}
+#credits p{
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 24px;
 }
 @media screen and (max-width: 992px) {
     .beforenav{
-        font-weight: 12px;
+        font-weight:300;
+        font-size: 11px;
+    }
+    .logo{
+        width: 36px;
+        height: 37px;
     }
     .logofirsttext{       
         font-weight: 400;
@@ -160,12 +179,10 @@ iframe{
     .logosecondtext{
         font-weight: 300px;
         font-size: 12px;
+        margin-bottom: 20px;
         /* line-height: 16px; */
     }
-    /* .carousel img{
-        height: 300px;
-        background-size: cover;
-    } */
+ 
     .speechsection{
         margin: 0px 30px;
     }

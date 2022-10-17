@@ -83,6 +83,13 @@ footer{
 }
 footer p{
     font-size: 16px;
+    font-weight: 300;
+}
+#footerlinks, .beforenav{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 /* wing page css */
@@ -151,7 +158,13 @@ iframe{
 }
 @media screen and (max-width: 992px) {
     .beforenav{
-        font-weight: 12px;
+        font-weight:300;
+        font-size: 11px;
+    }
+    #logo{
+        height: 36px;
+        width: 37px;
+
     }
     .logofirsttext{       
         font-weight: 400;
